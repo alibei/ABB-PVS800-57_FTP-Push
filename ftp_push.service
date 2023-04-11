@@ -1,0 +1,14 @@
+[Unit]
+Description=Inverter Data Push Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ftp_push/work
+ExecStart=/usr/bin/python3 /home/ftp_push/work/ftp_push.py
+Restart=always
+User=ftp_push
+Group=ftp_push
+
+[Install]
+WantedBy=multi-user.target[Unit]
